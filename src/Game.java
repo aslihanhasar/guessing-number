@@ -50,6 +50,7 @@ public class Game {
         int right = 0;
         int rnd = randomNumb();
         int[] guessArr = new int[5];
+        
         while (right < 5) {
             int number = receivingNumb();
             guessArr[right] = number;
