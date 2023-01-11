@@ -17,25 +17,27 @@ public class Game {
     }
 
 
-    static boolean isCorrect(int number, int rnd,int right) {
+    static boolean isCorrect(int number, int rnd, int right) {
         if (number == rnd) {
             System.out.print("Your guess is correct! ");
             return true;
         } else if (number > rnd) {
-            if (right !=4 ){
+            if (right != 4) {
                 System.out.println("Your guess is bigger than the mystery number! Try again ! ");
             }
             return false;
         } else {
-            if (right!=4){
+            if (right != 4) {
                 System.out.println("Your guess is smaller than the mystery number! Try again !");
             }
             return false;
         }
     }
-    static boolean isLost(int right){
+
+    static boolean isLost(int right) {
         return right >= 5;
     }
+
     static boolean isValid(int number) {
         if ((number < 0) || (number > 100)) {
             System.out.println("The number you entered is not valid! ");
@@ -55,7 +57,7 @@ public class Game {
             if (!(isValid(number))) {
                 System.out.println("Please enter a number between 0-100! ");
             } else {
-                if (isCorrect(number, rnd,right)) {
+                if (isCorrect(number, rnd, right)) {
                     System.out.println("You won the game! ");
                     break;
                 } else {
@@ -65,11 +67,11 @@ public class Game {
             System.out.println();
         }
 
-        if (isLost(right)){
+        if (isLost(right)) {
             System.out.println("You lost the game ! ");
         }
         System.out.println();
         System.out.println("Your guess numbers: " + Arrays.toString(guessArr));
-        System.out.println("The mystery number : "+rnd);
+        System.out.println("The mystery number : " + rnd);
     }
 }
